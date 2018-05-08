@@ -19,6 +19,7 @@
   "homepage": "https://github.com/pavlo-iuriichuk/annotate-ts#readme",
   "scripts": {
     "build": "TS_NODE_PROJECT=\"./tsconfig-for-webpack-config.json\" ./node_modules/.bin/webpack",
+    "release": "TS_NODE_PROJECT=\"./tsconfig-for-webpack-config.json\" NODE_ENV=\"production\" ./node_modules/.bin/webpack",
     "test": "npm test"
   },
   "devDependencies": {

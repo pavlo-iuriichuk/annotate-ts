@@ -2,6 +2,7 @@ import { TsConfigPathsPlugin } from 'awesome-typescript-loader';
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 import * as path from 'path';
 
+const isProduction = process.env.NODE_ENV === 'production';
 export default {
   entry: {
     'annotate': './src/index.ts',
@@ -20,9 +21,9 @@ export default {
     extensions: ['.ts', '.js']
   },
 
-  devtool: 'source-map',
+  devtool: isProduction ? 'source-map' : 'eval-source-map',
 
-  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+  mode: isProduction ? 'production' : 'development',
 
   module: {
     rules: [
@@ -36,16 +37,17 @@ export default {
       }
     ]
   },
-  optimization: {
-    minimizer: [
+  plugins: [
+      new TsConfigPathsPlugin(),
       new UglifyJsPlugin({
         sourceMap: true,
         parallel: true,
+        uglifyOptions: {
+          compress: true,
+          ecma: 5,
+          mangle: true
+        },
         include: /\.min\.js$/,
       })
-    ]
-  },
-  plugins: [
-      new TsConfigPathsPlugin()
   ]
 };
