@@ -1,0 +1,43 @@
+{
+  "name": "annotate-ts",
+  "version": "0.1.0",
+  "description": "Collection of decorators for TypeScript",
+  "main": "dist/annotate.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavlo-iuriichuk/annotate-ts.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "decorators"
+  ],
+  "author": "Pavlo Iuriichuk <pavlo.iuriichuk@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pavlo-iuriichuk/annotate-ts/issues"
+  },
+  "homepage": "https://github.com/pavlo-iuriichuk/annotate-ts#readme",
+  "scripts": {
+    "build": "TS_NODE_PROJECT=\"./tsconfig-for-webpack-config.json\" ./node_modules/.bin/webpack",
+    "test": "npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^10.0.4",
+    "@types/uglifyjs-webpack-plugin": "^1.1.0",
+    "@types/webpack": "^4.1.4",
+    "awesome-typescript-loader": "^5.0.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "ts-node": "^6.0.3",
+    "tsc": "^1.20150623.0",
+    "tsconfig-paths": "^3.3.2",
+    "typescript": "^2.8.3",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3"
+  }
+}

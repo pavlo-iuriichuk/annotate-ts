@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outDir": "./dist",
+        "moduleResolution": "node",
+        "allowJs": false,
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "types" : ["node"],
+        "lib": [
+            "es2015",
+            "es2016.array.include"
+        ]
+    },
+    "include": [
+        "./src/**/*"
+    ],
+    "exclude": [
+        "./node_modules",
+        "./**/*.spec.ts"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        "useBabel": true,
+        "useCache": true,
+        "reportFiles": [
+            "./src/**/*.{ts}"
+        ]
+    }
+}
